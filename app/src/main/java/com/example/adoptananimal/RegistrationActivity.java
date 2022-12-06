@@ -2,6 +2,7 @@ package com.example.adoptananimal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         edtname = (EditText) findViewById(R.id.edtRegName);
-        edtemail = (EditText) findViewById(R.id.edtRegAddress);
+        edtemail = (EditText) findViewById(R.id.edtRegEmail);
         edtpassword = (EditText) findViewById(R.id.edtRegPassword);
         edtaddress = (EditText) findViewById(R.id.edtRegAddress);
         edtnumber =(EditText) findViewById(R.id.edtRegPhone);
@@ -35,6 +36,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 insertStatus = dbh.InsertUser(user);
                 if(insertStatus){
                     Toast.makeText(getApplicationContext(),"Record Added Successfully",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"Record Not Added ",Toast.LENGTH_LONG).show();
 
