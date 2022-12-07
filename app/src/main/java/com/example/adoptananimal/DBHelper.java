@@ -20,7 +20,19 @@ public class DBHelper extends SQLiteOpenHelper {
     static final String COL5 = "User_Address";
     static final String COL6 = "User_Number";
 
+    // PET TABLE
+    static final String PET_TABLE_NAME = "Pet";
+    static final String PET_COL1 = "Pet_Id";
+    static final String PET_COL2 = "fk_User_Id";
+    static final String PET_COL3 = "Pet_Name";
+    static final String PET_COL4 = "Pet_Birthdate";
+    static final String PET_COL5 = "Pet_Type";
+
+
     static final String CREATE_TABLE = "create table " + TABLE_NAME + " (" + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 + " TEXT NOT NULL, " + COL3 + " TEXT NOT NULL, " + COL4 + " TEXT NOT NULL, " + COL5 + " TEXT NOT NULL , " + COL6 + " TEXT NOT NULL);";
+
+    static final String CREATE_TABLE_PET = "create table " + PET_TABLE_NAME + " (" + PET_COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PET_COL2 + " TEXT NOT NULL, " + PET_COL3 + " TEXT NOT NULL, " + PET_COL4 + " TEXT NOT NULL, " + PET_COL5 + " TEXT NOT NULL );";
+
     public DBHelper(Context context) {
         super(context,DBNAME,null, VERSION);
     }
@@ -28,6 +40,8 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL(CREATE_TABLE_PET);
+
     }
 
     @Override

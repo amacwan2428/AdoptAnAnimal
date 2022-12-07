@@ -5,6 +5,13 @@ public class Pet {
     private int userId;
     private String name, birthdate,type;
 
+    public Pet(int id, int userId, String name, String birthdate, String type){
+        this.id = id;
+        this.userId = userId;
+        this.name = name;
+        this.birthdate = birthdate;
+        this.type = type;
+    }
     public int getId() {
         return id;
     }
