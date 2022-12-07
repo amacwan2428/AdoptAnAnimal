@@ -2,9 +2,11 @@ package com.example.adoptananimal;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -33,6 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     static final String CREATE_TABLE_PET = "create table " + PET_TABLE_NAME + " (" + PET_COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PET_COL2 + " TEXT NOT NULL, " + PET_COL3 + " TEXT NOT NULL, " + PET_COL4 + " TEXT NOT NULL, " + PET_COL5 + " TEXT NOT NULL );";
 
+    String useremail, userpassword;
     public DBHelper(Context context) {
         super(context,DBNAME,null, VERSION);
     }
@@ -61,4 +64,22 @@ public class DBHelper extends SQLiteOpenHelper {
         long result = db.insert(TABLE_NAME,null,values);
         return ((result == -1)?false:true);
     }
+
+    public Boolean LoginUser(String email, String password) {
+        useremail = email;
+        userpassword = password;
+        Log.d("Tag",useremail + userpassword);
+        Cursor crsObj = null;
+        SQLiteDatabase db = this.getWritableDatabase();
+        crsObj = db.rawQuery("select * from " + TABLE_NAME + " WHERE User_Email = " + "'" + useremail + "'",null);
+        if(crsObj.moveToFirst()){
+            return  true;
+        }else{
+//            crsObj.moveToFirst();
+//            Log.d("Tag",crsObj.getString(3));
+
+            return false;
+        }
+    }
+
 }
