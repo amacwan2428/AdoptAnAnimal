@@ -48,20 +48,27 @@ public class LoginActivity extends AppCompatActivity {
                 email = edtUserEmail.getText().toString();
                 password = edtUserPassword.getText().toString();
 
-                isUserFound = dbh2.LoginUser(email,password);
-                if(isUserFound){
-                    Toast.makeText(getApplicationContext(),isUserFound.toString(),Toast.LENGTH_LONG).show();
-                    //Toast.makeText(getApplicationContext(),"User  found ",Toast.LENGTH_LONG).show();
-
-                    SharedPreferences.Editor editor1 = sharedPreferences.edit();
-                    editor1.putString("USER_EMAIL",email);
-                    editor1.commit();
-                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(intent);
+                if(email.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Enter Email",Toast.LENGTH_LONG).show();
+                }else if(password.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Enter Password",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getApplicationContext(),"User not found ",Toast.LENGTH_LONG).show();
+                    isUserFound = dbh2.LoginUser(email,password);
+                    if(isUserFound){
+                        Toast.makeText(getApplicationContext(),isUserFound.toString(),Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),"User  found ",Toast.LENGTH_LONG).show();
 
+                        SharedPreferences.Editor editor1 = sharedPreferences.edit();
+                        editor1.putString("USER_EMAIL",email);
+                        editor1.commit();
+                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(getApplicationContext(),"User not found ",Toast.LENGTH_LONG).show();
+
+                    }
                 }
+
             }
         });
     }

@@ -104,6 +104,16 @@
         android:inputType="number"
         android:layout_marginHorizontal="20dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already A User? Sign In."
+        android:id="@+id/txtUserLogin"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/textssize"
+        android:textStyle="bold"
+/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
