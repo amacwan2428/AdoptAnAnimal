@@ -61,8 +61,14 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor1 = sharedPreferences.edit();
                         editor1.putString("USER_EMAIL",email);
                         editor1.commit();
-                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                        startActivity(intent);
+                        if(email.equals("admin@admin.com")){
+                            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Intent intent = new Intent(LoginActivity.this,NewHomeActivity.class);
+                            startActivity(intent);
+                        }
+
                     }else{
                         Toast.makeText(getApplicationContext(),"User not found ",Toast.LENGTH_LONG).show();
 
