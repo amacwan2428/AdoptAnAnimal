@@ -10,6 +10,9 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     static final String DBNAME = "AnimalAdoption.db";
@@ -29,11 +32,13 @@ public class DBHelper extends SQLiteOpenHelper {
     static final String PET_COL3 = "Pet_Name";
     static final String PET_COL4 = "Pet_Birthdate";
     static final String PET_COL5 = "Pet_Type";
+    static final String PET_COL6 = "Pet_Status";
+
 
 
     static final String CREATE_TABLE = "create table " + TABLE_NAME + " (" + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 + " TEXT NOT NULL, " + COL3 + " TEXT NOT NULL, " + COL4 + " TEXT NOT NULL, " + COL5 + " TEXT NOT NULL , " + COL6 + " TEXT NOT NULL);";
 
-    static final String CREATE_TABLE_PET = "create table " + PET_TABLE_NAME + " (" + PET_COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PET_COL2 + " TEXT NOT NULL, " + PET_COL3 + " TEXT NOT NULL, " + PET_COL4 + " TEXT NOT NULL, " + PET_COL5 + " TEXT NOT NULL );";
+    static final String CREATE_TABLE_PET = "create table " + PET_TABLE_NAME + " (" + PET_COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PET_COL2 + " INTEGER, " + PET_COL3 + " TEXT NOT NULL, " + PET_COL4 + " TEXT NOT NULL, " + PET_COL5 + " TEXT NOT NULL,"  + PET_COL6 + " TEXT DEFAULT 'AVAILABLE' ); " ;
 
     String useremail, userpassword;
     public DBHelper(Context context) {
@@ -67,12 +72,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Boolean InsertPet(Pet pet) {
 
+
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(PET_COL2,pet.getName());
+        values.put(PET_COL2,pet.getUserId());
         values.put(PET_COL3,pet.getName());
         values.put(PET_COL4,pet.getBirthdate());
         values.put(PET_COL5,pet.getType());
+        values.put(PET_COL6,pet.getStatus());
         long result = db.insert(PET_TABLE_NAME,null,values);
         return ((result == -1)?false:true);
     }
@@ -93,5 +100,47 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean UpdatePetStatus(Pet pet, String status)
+    {
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        // If status is available
+        if(status.equals("AVAILABLE"))
+        {
+            // Clear User fk by assigning -1
+            values.put(PET_COL2,-1);
+        }
+        // Update status
+        values.put(PET_COL6,status);
+
+        long result = db.update(PET_TABLE_NAME,values,PET_COL1 + "=?",new String[]{String.valueOf(pet.getId())});
+
+        return ((result == -1)?false:true);
+    }
+    public List<Pet> ListPetsByStatus(String status){
+        List<Pet> petList = new ArrayList<>();
+        // Open db
+        SQLiteDatabase db = this.getWritableDatabase();
+        // Create cursor
+        Cursor cursorObj;
+        // Execute select query based on the status and store resulting cursor
+        cursorObj = db.rawQuery("SELECT * FROM " + PET_TABLE_NAME + " WHERE " + PET_COL6 + " = '"+status+"';",null);
+        // If found entries
+        if (cursorObj != null && cursorObj.getCount() != 0)
+        {
+            // Move cursor to first entry
+            cursorObj.moveToFirst();
+            // Iterate over all pets found
+            do {
+                // Create pet db using information obtained from row
+                Pet obj = new Pet(cursorObj.getInt(0),cursorObj.getInt(1),cursorObj.getString(2), cursorObj.getString(3), cursorObj.getString(4),cursorObj.getString(5));
+                obj.setStatus("PENDING");
+                // Add pet to the list
+                petList.add(obj);
+            }while(cursorObj.moveToNext());
+        }
+        return petList;
+    }
+
 
 }

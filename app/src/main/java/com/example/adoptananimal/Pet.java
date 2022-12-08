@@ -3,14 +3,29 @@ package com.example.adoptananimal;
 public class Pet {
     private int id;
     private int userId;
-    private String name, birthdate,type;
+    private String name;
+    private String birthdate;
+    private String type;
 
-    public Pet(int id, int userId, String name, String birthdate, String type){
+
+
+    private String status;
+
+    // Default status is AVAILABLE on the db
+    public Pet(int id, int userId, String name, String birthdate, String type, String status){
         this.id = id;
         this.userId = userId;
         this.name = name;
         this.birthdate = birthdate;
         this.type = type;
+        this.status = status;
+    }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     public int getId() {
         return id;

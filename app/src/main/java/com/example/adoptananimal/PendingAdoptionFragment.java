@@ -36,27 +36,31 @@ public class PendingAdoptionFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_pending_adoption, container, false);
+        // Generate list recyclerview
+        GenerateRecyclerView(v);
+        return v;
+    }
+    public void GenerateRecyclerView(View v)
+    {
         rcView = (RecyclerView) v.findViewById(R.id.rcView);
         dbh = new DBHelper(getActivity());
-        
+
         // Uncomment to populate db
         /*
         // Create pets
-        petList.add(new Pet(0, 0, "Java", "1990-08-04", "Cat"));
-        petList.add(new Pet(1, 1, "Android", "1990-08-05", "Cat"));
-        petList.add(new Pet(2, 2, "Windows", "1990-08-06", "Dog"));
+        petList.add(new Pet(0, 0, "Charizard", "1990-08-04", "Cat", "PENDING"));
+        petList.add(new Pet(1, 1, "Blastoise", "1990-08-05", "Cat", "PENDING"));
+        petList.add(new Pet(2, 2, "Venusaur", "1990-08-06", "Dog","PENDING"));
 
         for (Pet p: petList
-             ) {
+        ) {
             dbh.InsertPet(p);
-
-
         }
-        (/
-         */
+        */
+        // List all pending approvals
+        petList = dbh.ListPetsByStatus("PENDING");
         // Bind information to view
         BindAdapter();
-        return v;
     }
 
     private void BindAdapter() {
