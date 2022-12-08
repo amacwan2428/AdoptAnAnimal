@@ -19,6 +19,7 @@ public class PendingAdoptionFragment extends Fragment {
     RecyclerView rcView;
     List<Pet> petList = new ArrayList<>();
     PendingListAdapter listAdapter;
+    DBHelper dbh;
 
     public PendingAdoptionFragment() {
         // Required empty public constructor
@@ -36,11 +37,23 @@ public class PendingAdoptionFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_pending_adoption, container, false);
         rcView = (RecyclerView) v.findViewById(R.id.rcView);
+        dbh = new DBHelper(getActivity());
+        
+        // Uncomment to populate db
+        /*
         // Create pets
         petList.add(new Pet(0, 0, "Java", "1990-08-04", "Cat"));
         petList.add(new Pet(1, 1, "Android", "1990-08-05", "Cat"));
         petList.add(new Pet(2, 2, "Windows", "1990-08-06", "Dog"));
 
+        for (Pet p: petList
+             ) {
+            dbh.InsertPet(p);
+
+
+        }
+        (/
+         */
         // Bind information to view
         BindAdapter();
         return v;

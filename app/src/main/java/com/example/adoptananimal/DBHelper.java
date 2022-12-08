@@ -65,6 +65,18 @@ public class DBHelper extends SQLiteOpenHelper {
         return ((result == -1)?false:true);
     }
 
+    public Boolean InsertPet(Pet pet) {
+
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(PET_COL2,pet.getName());
+        values.put(PET_COL3,pet.getName());
+        values.put(PET_COL4,pet.getBirthdate());
+        values.put(PET_COL5,pet.getType());
+        long result = db.insert(PET_TABLE_NAME,null,values);
+        return ((result == -1)?false:true);
+    }
+
     public Boolean LoginUser(String email, String password) {
         useremail = email;
         userpassword = password;
