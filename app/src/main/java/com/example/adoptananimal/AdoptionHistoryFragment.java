@@ -19,6 +19,7 @@ public class AdoptionHistoryFragment extends Fragment {
     View v;
     RecyclerView rcView;
     List<Pet> petList = new ArrayList<>();
+    List<Adoption> adoptionList= new ArrayList<>();
     HistoryListAdapter listAdapter;
     DBHelper dbh;
     public AdoptionHistoryFragment() {
@@ -45,7 +46,9 @@ public class AdoptionHistoryFragment extends Fragment {
         // Init db
         dbh = new DBHelper(getActivity());
         // List all approved adoptions
-        petList = dbh.ListPetsByStatus("APPROVED");
+        adoptionList = dbh.ListAdoptionHistory();
+        // List all approved adoptions
+        //petList = dbh.ListPetsByStatus("APPROVED");
         // Bind information to view
         BindAdapter();
         return v;
@@ -56,9 +59,8 @@ public class AdoptionHistoryFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(v.getContext());
         // Setup recycler view layout manager
         rcView.setLayoutManager(layoutManager);
-
         // Create new adapter from pet list
-        listAdapter = new HistoryListAdapter(petList, v.getContext());
+        listAdapter = new HistoryListAdapter(adoptionList, v.getContext());
         // Feed student list to recycler view
         rcView.setAdapter(listAdapter);
         // Notify adapter change

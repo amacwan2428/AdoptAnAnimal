@@ -136,6 +136,46 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return ((result == -1)?false:true);
     }
+    public List<Adoption> ListAdoptionHistory()
+    {
+        List<Adoption> adoptionList = new ArrayList<>();
+        // Open db
+        SQLiteDatabase db = this.getWritableDatabase();
+        // Create cursor
+        Cursor cursorObj;
+        // Execute select query based on the status and store resulting cursor
+        String sql = "SELECT * FROM " + PET_TABLE_NAME + " JOIN " +TABLE_NAME
+                +" WHERE  fk_User_Id = User.id and " + PET_COL6 + " = 'APPROVED';";
+        cursorObj = db.rawQuery(sql ,null);
+        Log.i("SQL",sql);
+
+        // If found entries
+        if (cursorObj != null && cursorObj.getCount() != 0)
+        {
+            // Move cursor to first entry
+            cursorObj.moveToFirst();
+            // Iterate over all pets found
+            do {
+                // Create adoption obj using db info
+                Adoption obj = new Adoption();
+                obj.pet.setId(cursorObj.getInt(0));
+                obj.pet.setUserId(cursorObj.getInt(1));
+                obj.pet.setName(cursorObj.getString(2));
+                obj.pet.setBirthdate(cursorObj.getString(3));
+                obj.pet.setType(cursorObj.getString(4));
+                obj.pet.setStatus(cursorObj.getString(5));
+                obj.user.setId(cursorObj.getInt(6));
+                obj.user.setUname(cursorObj.getString(7));
+                obj.user.setUemail(cursorObj.getString(8));
+                obj.user.setUaddress(cursorObj.getString(10));
+                obj.user.setUphone(cursorObj.getString(11));
+                Log.i("ADOPTION",obj.pet.getName());
+                // Add adoption entry to the list
+                adoptionList.add(obj);
+            }while(cursorObj.moveToNext());
+        }
+        return adoptionList;
+    }
     public List<Pet> ListPetsByStatus(String status){
         List<Pet> petList = new ArrayList<>();
         // Open db

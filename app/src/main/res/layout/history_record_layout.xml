@@ -8,12 +8,12 @@
     >
     <ImageView
         android:id="@+id/imageViewPet"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/txtPetId"
-        android:layout_width="30dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -21,21 +21,51 @@
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/txtPetName"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
+
     <TextView
-        android:id="@+id/txtPetNameAdopt"
-        android:layout_width="120dp"
+        android:id="@+id/txtPetType"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/txtUserId"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/txtUserName"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/txtUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/txtUserAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/txtUserPhone"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"

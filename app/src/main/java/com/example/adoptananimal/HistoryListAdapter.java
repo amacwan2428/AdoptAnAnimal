@@ -12,15 +12,15 @@ import java.util.List;
 
 public class HistoryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     // PET LIST
-    private List<Pet> petList;
-    private List<UserInformation> ownersList;
+    //private List<Pet> petList;
+    private List<Adoption> adoptionList;
 
 
-    public HistoryListAdapter(List<Pet> petList, Context ctx)
+    public HistoryListAdapter(List<Adoption> adoptionList, Context ctx)
     {
         super();
         // Get list of pets from constructor
-        this.petList = petList;
+        this.adoptionList = adoptionList;
     }
 
     @NonNull
@@ -36,13 +36,20 @@ public class HistoryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         // Get pet from list
-        Pet obj = petList.get(position);
+        Adoption obj = adoptionList.get(position);
         // Bind object information to view
-        ((HistoryViewHolder) holder).txtPetId.setText(String.valueOf(obj.getId()));
-        ((HistoryViewHolder) holder).txtPetName.setText(String.valueOf(obj.getName()));
-        ((HistoryViewHolder) holder).txtPetType.setText(String.valueOf(obj.getType()));
-        ((HistoryViewHolder) holder).pet = obj;
-        if(obj.getType().trim().equals("Cat")){
+        ((HistoryViewHolder) holder).txtPetId.setText(String.valueOf(obj.pet.getId()));
+        ((HistoryViewHolder) holder).txtPetName.setText(String.valueOf(obj.pet.getName()));
+        ((HistoryViewHolder) holder).txtPetType.setText(String.valueOf(obj.pet.getType()));
+        ((HistoryViewHolder) holder).txtUserId.setText(String.valueOf(obj.user.getId()));
+        ((HistoryViewHolder) holder).txtUserName.setText(String.valueOf(obj.user.getUname()));
+        ((HistoryViewHolder) holder).txtUserAddress.setText(String.valueOf(obj.user.getUaddress()));
+        ((HistoryViewHolder) holder).txtUserPhone.setText(String.valueOf(obj.user.getUphone()));
+        ((HistoryViewHolder) holder).txtUserEmail.setText(String.valueOf(obj.user.getUemail()));
+
+        ((HistoryViewHolder) holder).pet = obj.pet;
+        // Put cat or dog image based on type of pet
+        if(obj.pet.getType().trim().equals("Cat")){
             ((HistoryViewHolder) holder).imgPet.setImageResource(R.drawable.cat);
         }else{
             ((HistoryViewHolder) holder).imgPet.setImageResource(R.drawable.dog);
@@ -51,6 +58,6 @@ public class HistoryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        return petList.size();
+        return adoptionList.size();
     }
 }
