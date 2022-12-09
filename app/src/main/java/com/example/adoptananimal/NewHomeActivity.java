@@ -10,9 +10,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -22,6 +27,11 @@ public class NewHomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView nDrawer;
     private ActionBarDrawerToggle drawerToggle;
+    TextView txtWelcome;
+    String email;
+    SharedPreferences sharedPreferences;
+    ImageView imgHome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +43,9 @@ public class NewHomeActivity extends AppCompatActivity {
 
         nDrawer = (NavigationView) findViewById(R.id.nav_view_two);
         mDrawer = (DrawerLayout) findViewById(R.id.new_nav_layout);
-
+        txtWelcome = (TextView) findViewById(R.id.txtWelcomeUser);
+        imgHome = (ImageView) findViewById(R.id.imgHome);
+        sharedPreferences = getSharedPreferences("login_activities", Context.MODE_PRIVATE);
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             drawerToggle = new ActionBarDrawerToggle(this, mDrawer, toolbar,R.string.drawer_open,R.string.drawer_close);
@@ -42,6 +54,9 @@ public class NewHomeActivity extends AppCompatActivity {
         mDrawer.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
         setupDrawerContent(nDrawer);
+
+        email =sharedPreferences.getString("USER_EMAIL",null);
+        txtWelcome.setText("Welcome " + email);
     }
 
     private void setupDrawerContent(NavigationView nDrawer) {
@@ -59,17 +74,29 @@ public class NewHomeActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.add_pets:
                 fragmentClass = AddAnimalFragment.class;
+                txtWelcome.setVisibility(View.INVISIBLE);
+                imgHome.setVisibility(View.INVISIBLE);
                 break;
             case R.id.adopt_pet:
                 fragmentClass = AdoptPetFragment.class;
+                txtWelcome.setVisibility(View.INVISIBLE);
+                imgHome.setVisibility(View.INVISIBLE);
+
                 break;
             case R.id.adoption_history:
                 fragmentClass = AdoptionHistoryFragment.class;
+                txtWelcome.setVisibility(View.INVISIBLE);
+                imgHome.setVisibility(View.INVISIBLE);
+
                 break;
 
             case R.id.logout:
                 Intent intent = new Intent(NewHomeActivity.this, LoginActivity.class);
                 startActivity(intent);
+                txtWelcome.setVisibility(View.INVISIBLE);
+                imgHome.setVisibility(View.INVISIBLE);
+
+
                 break;
         }
         try{
