@@ -10,6 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity"
+    android:background="@color/royal_blue"
     android:orientation="vertical">
 
     <TextView
@@ -20,6 +21,7 @@
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
+        android:textColor="@color/white"
         android:layout_margin="20dp"/>
 
     <TextView
@@ -28,13 +30,17 @@
         android:text="@string/name"
         android:textSize="@dimen/textssize"
         android:textStyle="bold"
+        android:textColor="@color/white"
+
         android:layout_margin="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/edtRegName"
         android:textSize="@dimen/textssize"
+        android:background="@color/white"
+
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="20dp"/>
 
@@ -43,13 +49,16 @@
         android:layout_height="wrap_content"
         android:text="@string/uemail"
         android:textSize="@dimen/textssize"
+        android:textColor="@color/white"
+
         android:textStyle="bold"
         android:layout_margin="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/edtRegEmail"
+        android:background="@color/white"
         android:textSize="@dimen/textssize"
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="20dp"/>
@@ -57,6 +66,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+
         android:text="@string/upassword"
         android:textSize="@dimen/textssize"
         android:textStyle="bold"
@@ -64,8 +75,10 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/edtRegPassword"
+        android:background="@color/white"
+
         android:textSize="@dimen/textssize"
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="20dp"
@@ -75,15 +88,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/uaddress"
+        android:textColor="@color/white"
+
         android:textSize="@dimen/textssize"
         android:textStyle="bold"
         android:layout_margin="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/edtRegAddress"
         android:textSize="@dimen/textssize"
+        android:background="@color/white"
+
         android:layout_marginTop="5dp"
         android:maxLines="3"
         android:layout_marginHorizontal="20dp"/>
@@ -93,15 +110,19 @@
         android:layout_height="wrap_content"
         android:text="@string/unumber"
         android:textSize="@dimen/textssize"
+        android:textColor="@color/white"
+
         android:textStyle="bold"
         android:layout_margin="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/edtRegPhone"
         android:textSize="@dimen/textssize"
         android:layout_marginTop="5dp"
+        android:background="@color/white"
+
         android:inputType="number"
         android:layout_marginHorizontal="20dp"/>
 
@@ -112,6 +133,8 @@
         android:id="@+id/txtUserLogin"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+
         android:textSize="@dimen/textssize"
         android:textStyle="bold"
 />
@@ -122,6 +145,8 @@
         android:text="@string/signup"
         android:id="@+id/btnRegistration"
         android:textSize="@dimen/textssize"
+        android:textStyle="bold"
+        android:backgroundTint="@color/btncolor"
         android:layout_margin="20dp"/>
 
 

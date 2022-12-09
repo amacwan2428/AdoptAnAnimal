@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/royal_blue"
     tools:context=".ListPetsFragment">
 
     <LinearLayout
@@ -15,7 +16,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:text="List of Pets"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:textSize="@dimen/headingsize"
             android:textStyle="bold"

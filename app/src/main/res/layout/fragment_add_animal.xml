@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/royal_blue"
     tools:context=".AddAnimalFragment">
 
     <LinearLayout
@@ -16,8 +17,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:text="Add Pet"
-            android:textColor="@color/black"
-
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:textSize="@dimen/headingsize"
             android:textStyle="bold"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pet Name"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:textSize="@dimen/textssize"
             android:textStyle="bold"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pet Type"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginHorizontal="20dp"
 
             android:layout_marginTop="20dp"
@@ -75,7 +75,7 @@
             android:layout_marginHorizontal="20dp"
             android:text="Birthday"
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/textssize"
             android:textStyle="bold" />
 
@@ -107,6 +107,7 @@
             android:textSize="@dimen/textssize"
             android:layout_marginHorizontal="20dp"
             android:textStyle="bold"
+            android:backgroundTint="@color/btncolor"
             android:layout_gravity="center_horizontal"
             />
 

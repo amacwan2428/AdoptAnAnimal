@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:orientation="horizontal"
-    android:background="@color/white"
+    android:background="@color/royal_blue"
     >
 
     <TextView
@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize = "20sp"
+        android:textColor="@color/white"
+
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -21,6 +23,7 @@
         android:layout_height="match_parent"
         android:textSize="20sp"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
     <TextView
@@ -28,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -37,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"
         android:textSize="18sp"
@@ -47,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"
         android:textSize="18sp"
@@ -57,6 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"
         android:textSize="18sp"
@@ -65,6 +72,7 @@
     <TextView
         android:id="@+id/txtUserAddress"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
@@ -76,6 +84,7 @@
         android:id="@+id/txtUserPhone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:textSize="18sp"

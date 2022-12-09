@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:orientation="horizontal"
-    android:background="@color/white"
+    android:background="@color/royal_blue"
     >
     <ImageView
         android:id="@+id/imageViewPet"
@@ -19,12 +19,14 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:textSize="@dimen/textssize"
+        android:textColor="@color/white"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/txtPetName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
 
         android:textSize="@dimen/textssize"
         android:layout_marginBottom="5dp"
@@ -35,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
 
@@ -42,6 +45,7 @@
         android:id="@+id/txtUserId"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -49,6 +53,7 @@
         android:id="@+id/txtUserName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -56,6 +61,7 @@
         android:id="@+id/txtUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -63,6 +69,7 @@
         android:id="@+id/txtUserAddress"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -70,6 +77,7 @@
         android:id="@+id/txtUserPhone"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/white"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>

@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/royal_blue"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -14,6 +16,7 @@
         android:layout_margin="40dp"
         android:textSize="@dimen/headingsize"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         />
@@ -24,14 +27,19 @@
         android:text="@string/uemail"
         android:textSize="@dimen/textssize"
         android:textStyle="bold"
-        android:layout_margin="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+
         />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/edtUserEmail"
         android:textSize="@dimen/textssize"
+        android:background="@color/white"
         />
 
     <TextView
@@ -40,14 +48,19 @@
         android:text="@string/upassword"
         android:textSize="@dimen/textssize"
         android:textStyle="bold"
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="@color/white"
+
         />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/edtUserPassword"
+        android:background="@color/white"
         android:textSize="@dimen/textssize"
+        android:layout_marginTop="5dp"
         android:inputType="textWebPassword"
         />
 
@@ -57,6 +70,7 @@
         android:textSize="@dimen/textssize"
         android:layout_margin="20dp"
         android:id="@+id/txtRegistration"
+        android:textColor="@color/white"
         android:text="@string/reglink"
         android:textStyle="bold"/>
 
@@ -67,6 +81,8 @@
         android:text="@string/login"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
+        android:textStyle="bold"
+        android:backgroundTint="@color/btncolor"
         android:layout_margin="20dp"
         />
 </LinearLayout>

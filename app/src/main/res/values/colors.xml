@@ -8,7 +8,8 @@
     <color name="approve_color">#4CAF50</color>
     <color name="reject_color">#A21F1F</color>
     <color name="gray_bg">#F3F3F3</color>
-
+    <color name="royal_blue">#4c4c4c</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="btncolor">#bdbdbd</color>
 </resources>
