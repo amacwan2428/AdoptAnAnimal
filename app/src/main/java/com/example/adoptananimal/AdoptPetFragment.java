@@ -19,7 +19,7 @@ public class AdoptPetFragment extends Fragment {
     View v;
     RecyclerView rcView;
     List<Pet> petList = new ArrayList<>();
-    PendingListAdapter listAdapter;
+    AdoptListAdapter listAdapter;
     DBHelper dbh;
 
     public AdoptPetFragment() {
@@ -43,7 +43,7 @@ public class AdoptPetFragment extends Fragment {
 
     public void GenerateRecyclerView(View v)
     {
-        rcView = (RecyclerView) v.findViewById(R.id.rcView);
+        rcView = (RecyclerView) v.findViewById(R.id.rcViewAdopt);
         dbh = new DBHelper(getActivity());
 
         // Uncomment to populate db
@@ -59,7 +59,7 @@ public class AdoptPetFragment extends Fragment {
         }
 */
         // List all pending approvals
-        petList = dbh.ListPetsByStatus("PENDING");
+        petList = dbh.ListPetsByStatus("AVAILABLE");
         // Bind information to view
         BindAdapter();
     }
@@ -71,7 +71,7 @@ public class AdoptPetFragment extends Fragment {
         rcView.setLayoutManager(layoutManager);
 
         // Create new adapter from pet list
-        listAdapter = new PendingListAdapter(petList, v.getContext());
+        listAdapter = new AdoptListAdapter(petList, v.getContext());
         // Feed student list to recycler view
         rcView.setAdapter(listAdapter);
         // Notify adapter change

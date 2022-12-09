@@ -23,7 +23,7 @@ public class AdoptListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adopt_record_layout, parent, false);
-        PendingViewHolder vh = new PendingViewHolder(v);
+        AdoptViewHolder vh = new AdoptViewHolder(v);
         return vh;
     }
 
@@ -32,10 +32,10 @@ public class AdoptListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         // Get pet from list
         Pet obj = petList.get(position);
         // Bind object information to view
-        ((PendingViewHolder) holder).txtPetId.setText(String.valueOf(obj.getId()));
-        ((PendingViewHolder) holder).txtPetName.setText(String.valueOf(obj.getName()));
-        ((PendingViewHolder) holder).txtPetType.setText(String.valueOf(obj.getType()));
-        ((PendingViewHolder) holder).pet = obj;
+        ((AdoptViewHolder) holder).txtPetId.setText(String.valueOf(obj.getId()));
+        ((AdoptViewHolder) holder).txtPetName.setText(String.valueOf(obj.getName()));
+        ((AdoptViewHolder) holder).txtPetType.setText(String.valueOf(obj.getType()));
+        ((AdoptViewHolder) holder).pet = obj;
     }
 
     @Override

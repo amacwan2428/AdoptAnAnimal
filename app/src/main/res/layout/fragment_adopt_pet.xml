@@ -16,7 +16,7 @@
             >
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcView"
+                android:id="@+id/rcViewAdopt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
