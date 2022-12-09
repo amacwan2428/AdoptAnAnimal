@@ -32,9 +32,14 @@ public class AdoptListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         // Get pet from list
         Pet obj = petList.get(position);
         // Bind object information to view
-        ((AdoptViewHolder) holder).txtPetId.setText(String.valueOf(obj.getId()));
-        ((AdoptViewHolder) holder).txtPetName.setText(String.valueOf(obj.getName()));
-        ((AdoptViewHolder) holder).txtPetType.setText(String.valueOf(obj.getType()));
+
+        ((AdoptViewHolder) holder).txtPetNameAdopt.setText(String.valueOf(obj.getName()));
+        if(obj.getType().trim().equals("Cat")){
+            ((AdoptViewHolder) holder).imgPet.setImageResource(R.drawable.cat);
+        }else{
+            ((AdoptViewHolder) holder).imgPet.setImageResource(R.drawable.dog);
+        }
+
         ((AdoptViewHolder) holder).pet = obj;
     }
 

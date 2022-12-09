@@ -23,7 +23,7 @@
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
     <TextView
-        android:id="@+id/txtPetType"
+        android:id="@+id/txtPetNameAdopt"
         android:layout_width="120dp"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"

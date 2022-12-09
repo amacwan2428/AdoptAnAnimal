@@ -2,6 +2,7 @@ package com.example.adoptananimal;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,16 +12,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdoptViewHolder extends RecyclerView.ViewHolder{
-    public TextView txtPetId, txtPetName, txtPetType;
+    public TextView  txtPetNameAdopt;
     public Button btnApprove;
     public Pet pet;
+    public ImageView imgPet;
     public AdoptViewHolder(@NonNull View itemView) {
         super(itemView);
         // Reference to view widgets
-        txtPetId = (TextView) itemView.findViewById(R.id.txtPetId);
-        txtPetName = (TextView) itemView.findViewById(R.id.txtPetName);
-        txtPetType = (TextView) itemView.findViewById(R.id.txtPetType);
+
+        txtPetNameAdopt = (TextView) itemView.findViewById(R.id.txtPetNameAdopt);
+
         btnApprove = (Button) itemView.findViewById(R.id.btnApprove);
+        imgPet = (ImageView) itemView.findViewById(R.id.imageViewPet);
 
 
         btnApprove.setOnClickListener(new View.OnClickListener() {

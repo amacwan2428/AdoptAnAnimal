@@ -8,8 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class PendingViewHolder extends RecyclerView.ViewHolder {
@@ -22,7 +20,7 @@ public class PendingViewHolder extends RecyclerView.ViewHolder {
         // Reference to view widgets
         txtPetId = (TextView) itemView.findViewById(R.id.txtPetId);
         txtPetName = (TextView) itemView.findViewById(R.id.txtPetName);
-        txtPetType = (TextView) itemView.findViewById(R.id.txtPetType);
+        txtPetType = (TextView) itemView.findViewById(R.id.txtPetNameAdopt);
         btnApprove = (Button) itemView.findViewById(R.id.btnApprove);
         btnReject = (Button) itemView.findViewById(R.id.btnReject);
 
