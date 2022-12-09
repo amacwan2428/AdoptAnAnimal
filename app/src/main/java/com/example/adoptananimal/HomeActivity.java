@@ -77,16 +77,21 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
-        try{
-            frag = (Fragment) fragmentClass.newInstance();
-        }catch (Exception e){
-            e.printStackTrace();
+
+        if(frag != null)
+        {
+            try{
+                frag = (Fragment) fragmentClass.newInstance();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            FragmentManager fragManager = getSupportFragmentManager();
+            fragManager.beginTransaction().replace(R.id.frameLay,frag).commit();
+            item.setChecked(true);
+            setTitle(item.getTitle());
+            mDrawer.closeDrawers();
         }
-        FragmentManager fragManager = getSupportFragmentManager();
-        fragManager.beginTransaction().replace(R.id.frameLay,frag).commit();
-        item.setChecked(true);
-        setTitle(item.getTitle());
-        mDrawer.closeDrawers();
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

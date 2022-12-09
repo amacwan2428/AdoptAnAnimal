@@ -77,11 +77,15 @@ public class NewHomeActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-        FragmentManager fragManager = getSupportFragmentManager();
-        fragManager.beginTransaction().replace(R.id.frameLayTwo,frag).commit();
-        item.setChecked(true);
-        setTitle(item.getTitle());
-        mDrawer.closeDrawers();
+        if(frag !=null)
+        {
+            FragmentManager fragManager = getSupportFragmentManager();
+            fragManager.beginTransaction().replace(R.id.frameLayTwo,frag).commit();
+            item.setChecked(true);
+            setTitle(item.getTitle());
+            mDrawer.closeDrawers();
+        }
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

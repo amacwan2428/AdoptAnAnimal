@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtRegLink;
     String email,password;
     DBHelper dbh2;
-    Boolean isUserFound;
+    int isUserFound;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +54,13 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Enter Password",Toast.LENGTH_LONG).show();
                 }else{
                     isUserFound = dbh2.LoginUser(email,password);
-                    if(isUserFound){
-                        Toast.makeText(getApplicationContext(),isUserFound.toString(),Toast.LENGTH_LONG).show();
+                    if(isUserFound != -1){
+                        Toast.makeText(getApplicationContext(),String.valueOf(isUserFound),Toast.LENGTH_LONG).show();
                         //Toast.makeText(getApplicationContext(),"User  found ",Toast.LENGTH_LONG).show();
 
                         SharedPreferences.Editor editor1 = sharedPreferences.edit();
                         editor1.putString("USER_EMAIL",email);
+                        editor1.putInt("USER_ID",isUserFound);
                         editor1.commit();
                         if(email.equals("admin@admin.com")){
                             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);

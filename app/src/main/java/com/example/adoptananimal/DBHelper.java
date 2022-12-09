@@ -88,7 +88,8 @@ public class DBHelper extends SQLiteOpenHelper {
         return ((result == -1)?false:true);
     }
 
-    public Boolean LoginUser(String email, String password) {
+    // Returns -1 if no user found and the user_id if sfound a user
+    public int LoginUser(String email, String password) {
         useremail = email;
         userpassword = password;
         Log.d("Tag",useremail + userpassword);
@@ -96,12 +97,12 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         crsObj = db.rawQuery("select * from " + TABLE_NAME + " WHERE User_Email = " + "'" + useremail + "'",null);
         if(crsObj.moveToFirst()){
-            return  true;
+            return  crsObj.getInt(0);
         }else{
 //            crsObj.moveToFirst();
 //            Log.d("Tag",crsObj.getString(3));
 
-            return false;
+            return -1;
         }
     }
     public boolean UpdatePetStatus(Pet pet, String status)
@@ -116,6 +117,20 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         // Update status
         values.put(PET_COL6,status);
+
+        long result = db.update(PET_TABLE_NAME,values,PET_COL1 + "=?",new String[]{String.valueOf(pet.getId())});
+
+        return ((result == -1)?false:true);
+    }
+
+    public boolean AdoptPet(Pet pet, int user_id)
+    {
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        // If status is available
+        // Update status
+        values.put(PET_COL2,user_id);
+        values.put(PET_COL6,"PENDING");
 
         long result = db.update(PET_TABLE_NAME,values,PET_COL1 + "=?",new String[]{String.valueOf(pet.getId())});
 
