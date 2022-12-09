@@ -46,9 +46,9 @@ public class PendingAdoptionFragment extends Fragment {
         dbh = new DBHelper(getActivity());
 
         // Uncomment to populate db
-        /*
+
         // Create pets
-        petList.add(new Pet(0, 0, "Charizard", "1990-08-04", "Cat", "PENDING"));
+        /*petList.add(new Pet(0, 0, "Charizard", "1990-08-04", "Cat", "PENDING"));
         petList.add(new Pet(1, 1, "Blastoise", "1990-08-05", "Cat", "PENDING"));
         petList.add(new Pet(2, 2, "Venusaur", "1990-08-06", "Dog","PENDING"));
 
@@ -56,7 +56,7 @@ public class PendingAdoptionFragment extends Fragment {
         ) {
             dbh.InsertPet(p);
         }
-        */
+*/
         // List all pending approvals
         petList = dbh.ListPetsByStatus("PENDING");
         // Bind information to view

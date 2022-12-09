@@ -37,9 +37,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     static final String CREATE_TABLE = "create table " + TABLE_NAME + " (" + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 + " TEXT NOT NULL, " + COL3 + " TEXT NOT NULL, " + COL4 + " TEXT NOT NULL, " + COL5 + " TEXT NOT NULL , " + COL6 + " TEXT NOT NULL);";
-
+    static final String ADROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     static final String CREATE_TABLE_PET = "create table " + PET_TABLE_NAME + " (" + PET_COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PET_COL2 + " INTEGER, " + PET_COL3 + " TEXT NOT NULL, " + PET_COL4 + " TEXT NOT NULL, " + PET_COL5 + " TEXT NOT NULL,"  + PET_COL6 + " TEXT DEFAULT 'AVAILABLE' ); " ;
-
+    static final String ADROP_TABLE_PET = "DROP TABLE IF EXISTS " + PET_TABLE_NAME;
     String useremail, userpassword;
     public DBHelper(Context context) {
         super(context,DBNAME,null, VERSION);
@@ -54,6 +54,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL(ADROP_TABLE);
+        db.execSQL(ADROP_TABLE_PET);
         onCreate(db);
     }
 
@@ -72,8 +74,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Boolean InsertPet(Pet pet) {
 
-
         SQLiteDatabase db =this.getWritableDatabase();
+        /*db.execSQL(ADROP_TABLE);
+        db.execSQL(ADROP_TABLE_PET);
+        onCreate(db);*/
         ContentValues values = new ContentValues();
         values.put(PET_COL2,pet.getUserId());
         values.put(PET_COL3,pet.getName());
