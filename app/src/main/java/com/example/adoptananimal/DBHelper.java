@@ -137,13 +137,29 @@ public class DBHelper extends SQLiteOpenHelper {
             // Iterate over all pets found
             do {
                 // Create pet db using information obtained from row
-                Pet obj = new Pet(cursorObj.getInt(0),cursorObj.getInt(1),cursorObj.getString(2), cursorObj.getString(3), cursorObj.getString(4),cursorObj.getString(5));
-                obj.setStatus("PENDING");
+                //Pet obj = new Pet(cursorObj.getInt(0),cursorObj.getInt(1),cursorObj.getString(2), cursorObj.getString(3), cursorObj.getString(4),cursorObj.getString(5));
+                Pet obj = new Pet();
+                obj.setId(cursorObj.getInt(0));
+                obj.setUserId(cursorObj.getInt(1));
+                obj.setName(cursorObj.getString(2));
+                obj.setType(cursorObj.getString(4));
+                obj.setBirthdate(cursorObj.getString(3));
+                obj.setStatus(cursorObj.getString(5));
                 // Add pet to the list
                 petList.add(obj);
             }while(cursorObj.moveToNext());
         }
         return petList;
+    }
+
+    public Cursor ListPets() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursorObj;
+        cursorObj = db.rawQuery("select * from " + PET_TABLE_NAME, null);
+        if (cursorObj != null) {
+            cursorObj.moveToFirst();
+        }
+        return cursorObj;
     }
 
 

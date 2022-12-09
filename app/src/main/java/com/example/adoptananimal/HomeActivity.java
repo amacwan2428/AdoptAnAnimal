@@ -63,6 +63,9 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.adopt_pet:
                 fragmentClass = AdoptPetFragment.class;
                 break;
+            case R.id.list_pets:
+                fragmentClass = ListPetsFragment.class;
+                break;
             case R.id.adoption_history:
                 fragmentClass = AdoptionHistoryFragment.class;
                 break;

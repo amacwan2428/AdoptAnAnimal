@@ -8,6 +8,9 @@
             android:title="Add Pets"
             />
         <item
+            android:id="@+id/list_pets"
+            android:title="List Pets" />
+        <item
             android:id="@+id/adopt_pet"
             android:title="Pet Adoption" />
         <item
