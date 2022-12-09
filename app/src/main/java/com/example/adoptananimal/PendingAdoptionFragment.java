@@ -18,6 +18,7 @@ public class PendingAdoptionFragment extends Fragment {
     View v;
     RecyclerView rcView;
     List<Pet> petList = new ArrayList<>();
+    List<Adoption> adoptionList = new ArrayList<>();
     PendingListAdapter listAdapter;
     DBHelper dbh;
 
@@ -59,6 +60,7 @@ public class PendingAdoptionFragment extends Fragment {
 */
         // List all pending approvals
         petList = dbh.ListPetsByStatus("PENDING");
+        adoptionList = dbh.ListPendingAdoptions();
         // Bind information to view
         BindAdapter();
     }
@@ -70,7 +72,7 @@ public class PendingAdoptionFragment extends Fragment {
         rcView.setLayoutManager(layoutManager);
 
         // Create new adapter from pet list
-        listAdapter = new PendingListAdapter(petList, v.getContext());
+        listAdapter = new PendingListAdapter(adoptionList, v.getContext());
         // Feed student list to recycler view
         rcView.setAdapter(listAdapter);
         // Notify adapter change

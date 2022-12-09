@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class PendingViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView txtPetId, txtPetName, txtPetType;
+    public TextView txtPetId, txtPetName, txtPetType, txtUserId, txtUserName,txtUserEmail,txtUserAddress,txtUserPhone;
     public Button btnApprove, btnReject;
     public Pet pet;
     public PendingViewHolder(@NonNull View itemView) {
@@ -21,6 +21,11 @@ public class PendingViewHolder extends RecyclerView.ViewHolder {
         txtPetId = (TextView) itemView.findViewById(R.id.txtPetId);
         txtPetName = (TextView) itemView.findViewById(R.id.txtPetName);
         txtPetType = (TextView) itemView.findViewById(R.id.txtPetNameAdopt);
+        txtUserId = (TextView) itemView.findViewById(R.id.txtUserId);
+        txtUserName = (TextView) itemView.findViewById(R.id.txtUserName);
+        txtUserAddress = (TextView) itemView.findViewById(R.id.txtUserAddress);
+        txtUserPhone = (TextView) itemView.findViewById(R.id.txtUserPhone);
+        txtUserEmail = (TextView) itemView.findViewById(R.id.txtUserEmail);
         btnApprove = (Button) itemView.findViewById(R.id.btnApprove);
         btnReject = (Button) itemView.findViewById(R.id.btnReject);
 

@@ -11,13 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class PendingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    private List<Pet> petList;
+    //private List<Pet> petList;
+    private List<Adoption> adoptionList;
 
-    public PendingListAdapter(List<Pet> petList, Context ctx)
+    public PendingListAdapter(List<Adoption> adoptionList, Context ctx)
     {
         super();
         // Get list of pets from constructor
-        this.petList = petList;
+        this.adoptionList = adoptionList;
     }
 
     @Override
@@ -30,16 +31,21 @@ public class PendingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         // Get pet from list
-        Pet obj = petList.get(position);
+        Adoption obj = adoptionList.get(position);
         // Bind object information to view
-        ((PendingViewHolder) holder).txtPetId.setText(String.valueOf(obj.getId()));
-        ((PendingViewHolder) holder).txtPetName.setText(String.valueOf(obj.getName()));
-        ((PendingViewHolder) holder).txtPetType.setText(String.valueOf(obj.getType()));
-        ((PendingViewHolder) holder).pet = obj;
+        ((PendingViewHolder) holder).txtPetId.setText(String.valueOf(obj.pet.getId()));
+        ((PendingViewHolder) holder).txtPetName.setText(String.valueOf(obj.pet.getName()));
+        ((PendingViewHolder) holder).txtPetType.setText(String.valueOf(obj.pet.getType()));
+        ((PendingViewHolder) holder).txtUserId.setText(String.valueOf(obj.user.getId()));
+        ((PendingViewHolder) holder).txtUserName.setText(String.valueOf(obj.user.getUname()));
+        ((PendingViewHolder) holder).txtUserAddress.setText(String.valueOf(obj.user.getUaddress()));
+        ((PendingViewHolder) holder).txtUserPhone.setText(String.valueOf(obj.user.getUphone()));
+        ((PendingViewHolder) holder).txtUserEmail.setText(String.valueOf(obj.user.getUemail()));
+        ((PendingViewHolder) holder).pet = obj.pet;
     }
 
     @Override
     public int getItemCount() {
-        return petList.size();
+        return adoptionList.size();
     }
 }
