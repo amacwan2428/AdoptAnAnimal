@@ -48,6 +48,7 @@
         android:layout_margin="20dp"
         android:id="@+id/edtUserPassword"
         android:textSize="@dimen/textssize"
+        android:inputType="textWebPassword"
         />
 
     <TextView
