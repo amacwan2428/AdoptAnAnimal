@@ -19,7 +19,7 @@
             android:textColor="@color/black"
 
             android:layout_marginTop="20dp"
-            android:textSize="35dp"
+            android:textSize="@dimen/headingsize"
             android:textStyle="bold"
             />
         <TextView
@@ -27,10 +27,10 @@
             android:layout_height="wrap_content"
             android:text="Pet Name"
             android:textColor="@color/black"
-
             android:layout_marginTop="20dp"
-            android:textSize="15dp"
+            android:textSize="@dimen/textssize"
             android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"
             />
         <EditText
             android:id="@+id/edtPetName"
@@ -40,8 +40,10 @@
             android:layout_marginTop="5dp"
             android:inputType="textPersonName"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="@dimen/textssize"
             android:background="@color/white"
+            android:layout_marginHorizontal="20dp"
+
             android:hint="Enter Name" />
 
         <TextView
@@ -49,9 +51,10 @@
             android:layout_height="wrap_content"
             android:text="Pet Type"
             android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
 
             android:layout_marginTop="20dp"
-            android:textSize="15dp"
+            android:textSize="@dimen/textssize"
             android:textStyle="bold"
             />
 
@@ -60,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="20dp"
             android:background="@color/white"
             android:textColor="@color/black"/>
 
@@ -68,10 +72,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
             android:text="Birthday"
 
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="@dimen/textssize"
             android:textStyle="bold" />
 
         <EditText
@@ -79,11 +84,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="20dp"
             android:background="@color/white"
             android:ems="10"
             android:hint="Enter Birthday"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="@dimen/textssize"
             android:textStyle="bold"
             android:clickable="true"
             android:focusable="false"
@@ -93,13 +99,15 @@
 
         <Button
             android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="@dimen/textssize"
+            android:layout_marginHorizontal="20dp"
             android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
             />
 
 

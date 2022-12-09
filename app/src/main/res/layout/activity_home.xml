@@ -15,14 +15,14 @@
         android:layout_marginTop="50dp"
         android:textSize="@dimen/headingsize"
         android:id="@+id/txtWelcome"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/adoptdogs"
         android:id="@+id/imgHomeAD"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
 
     <LinearLayout
