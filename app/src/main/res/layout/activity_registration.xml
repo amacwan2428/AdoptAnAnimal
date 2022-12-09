@@ -68,7 +68,8 @@
         android:id="@+id/edtRegPassword"
         android:textSize="@dimen/textssize"
         android:layout_marginTop="5dp"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"
+        android:inputType="textWebPassword"/>
 
     <TextView
         android:layout_width="match_parent"
