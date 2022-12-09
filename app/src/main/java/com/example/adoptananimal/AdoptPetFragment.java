@@ -3,62 +3,79 @@ package com.example.adoptananimal;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AdoptPetFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class AdoptPetFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    View v;
+    RecyclerView rcView;
+    List<Pet> petList = new ArrayList<>();
+    PendingListAdapter listAdapter;
+    DBHelper dbh;
 
     public AdoptPetFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AdoptPetFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AdoptPetFragment newInstance(String param1, String param2) {
-        AdoptPetFragment fragment = new AdoptPetFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adopt_pet, container, false);
+        v = inflater.inflate(R.layout.fragment_adopt_pet, container, false);
+        // Generate list recyclerview
+        GenerateRecyclerView(v);
+        return v;
+    }
+
+    public void GenerateRecyclerView(View v)
+    {
+        rcView = (RecyclerView) v.findViewById(R.id.rcView);
+        dbh = new DBHelper(getActivity());
+
+        // Uncomment to populate db
+
+        // Create pets
+        /*petList.add(new Pet(0, 0, "Charizard", "1990-08-04", "Cat", "PENDING"));
+        petList.add(new Pet(1, 1, "Blastoise", "1990-08-05", "Cat", "PENDING"));
+        petList.add(new Pet(2, 2, "Venusaur", "1990-08-06", "Dog","PENDING"));
+
+        for (Pet p: petList
+        ) {
+            dbh.InsertPet(p);
+        }
+*/
+        // List all pending approvals
+        petList = dbh.ListPetsByStatus("PENDING");
+        // Bind information to view
+        BindAdapter();
+    }
+
+    private void BindAdapter() {
+        // Get layout manager
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(v.getContext());
+        // Setup recycler view layout manager
+        rcView.setLayoutManager(layoutManager);
+
+        // Create new adapter from pet list
+        listAdapter = new PendingListAdapter(petList, v.getContext());
+        // Feed student list to recycler view
+        rcView.setAdapter(listAdapter);
+        // Notify adapter change
+        listAdapter.notifyDataSetChanged();
+
     }
 }
