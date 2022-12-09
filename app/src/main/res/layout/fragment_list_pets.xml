@@ -17,7 +17,7 @@
             android:text="List of Pets"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
-            android:textSize="35dp"
+            android:textSize="@dimen/headingsize"
             android:textStyle="bold"
             />
         <androidx.recyclerview.widget.RecyclerView

@@ -13,12 +13,16 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:textSize="@dimen/textssize"
+
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/txtPetName"
         android:layout_width="50dp"
         android:layout_height="match_parent"
+        android:textSize="@dimen/textssize"
+
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
@@ -27,6 +31,8 @@
         android:layout_width="120dp"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
+        android:textSize="@dimen/textssize"
+
         android:layout_marginBottom="5dp"
         android:layout_weight="1"/>
     <LinearLayout
@@ -38,6 +44,8 @@
             android:layout_height="wrap_content"
             android:text="Approve"
             android:id="@+id/btnApprove"
+            android:textSize="@dimen/textssize"
+
             android:backgroundTint="@color/approve_color"
             android:layout_margin="10dp"
             />
@@ -46,6 +54,8 @@
             android:layout_height="wrap_content"
             android:text="Reject"
             android:id="@+id/btnReject"
+            android:textSize="@dimen/textssize"
+
             android:layout_margin="10dp"
             android:backgroundTint="@color/reject_color"
             />

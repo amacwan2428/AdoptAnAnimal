@@ -7,6 +7,24 @@
     android:id="@+id/drawer_layout"
     tools:context=".HomeActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:textSize="@dimen/headingsize"
+        android:id="@+id/txtWelcome"
+        android:visibility="visible"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/adoptdogs"
+        android:id="@+id/imgHomeAD"
+        android:visibility="visible"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +39,7 @@
             android:layout_height="match_parent"
             android:id="@+id/frameLay"/>
     </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
