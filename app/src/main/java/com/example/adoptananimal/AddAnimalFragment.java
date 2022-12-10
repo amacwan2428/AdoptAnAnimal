@@ -1,6 +1,7 @@
 package com.example.adoptananimal;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -95,6 +96,10 @@ public class AddAnimalFragment extends Fragment {
                 if(insertStatus)
                 {
                     Toast.makeText(getActivity(),"Record added successfully", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(v.getContext(),HomeActivity.class);
+                    startActivity(intent);
+
                 }
                 else
                 {

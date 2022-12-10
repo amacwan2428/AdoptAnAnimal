@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     isUserFound = dbh2.LoginUser(email,password);
                     if(isUserFound != -1){
-                        Toast.makeText(getApplicationContext(),String.valueOf(isUserFound),Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),String.valueOf(isUserFound),Toast.LENGTH_LONG).show();
                         //Toast.makeText(getApplicationContext(),"User  found ",Toast.LENGTH_LONG).show();
 
                         SharedPreferences.Editor editor1 = sharedPreferences.edit();
