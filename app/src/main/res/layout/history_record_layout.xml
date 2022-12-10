@@ -3,84 +3,242 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@color/royal_blue"
     >
+
     <ImageView
         android:id="@+id/imageViewPet"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtPetId"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:textSize="@dimen/textssize"
-        android:textColor="@color/white"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtPetName"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:textSize="@dimen/textssize"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/textssize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Pet Id"/>
+        <TextView
+            android:id="@+id/txtPetId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/textssize"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtPetType"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/txtUserId"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtUserEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtUserAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtUserPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:text="Pet Name"
+            android:textSize="@dimen/textssize"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtPetName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+
+            android:textSize="@dimen/textssize"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/textssize"
+            android:layout_weight="1"
+            android:text="Pet Type"/>
+
+        <TextView
+            android:id="@+id/txtPetType"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textssize"
+
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textssize"
+
+            android:textStyle="bold"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="User Id"/>
+
+        <TextView
+            android:id="@+id/txtUserId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textssize"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/textssize"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="User Name"/>
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:textSize="@dimen/textssize"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textssize"
+            android:textStyle="bold"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="User Email"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/textssize"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textSize="@dimen/textssize"
+
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="User Address"/>
+        <TextView
+            android:id="@+id/txtUserAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:textSize="@dimen/textssize"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/textssize"
+
+            android:layout_weight="1"
+            android:text="User Phone"/>
+
+
+        <TextView
+            android:id="@+id/txtUserPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/textssize"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

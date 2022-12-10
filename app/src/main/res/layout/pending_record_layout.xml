@@ -3,96 +3,236 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@color/royal_blue"
     >
 
-    <TextView
-        android:id="@+id/txtPetId"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize = "20sp"
-        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize = "20sp"
+            android:textColor="@color/white"
+            android:text="Pet Id:"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/txtPetId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize = "20sp"
+            android:textColor="@color/white"
 
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtPetName"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
-    <TextView
-        android:id="@+id/txtPetNameAdopt"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"/>
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
 
-    <TextView
-        android:id="@+id/txtUserId"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
-        android:textSize="18sp"
+    </LinearLayout>
 
-        />
-    <TextView
-        android:id="@+id/txtUserName"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        />
-    <TextView
-        android:id="@+id/txtUserEmail"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:text="Pet Name"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtPetName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"
+            android:text="Pet Type"
+            android:layout_weight="1"/>
 
-        />
-    <TextView
-        android:id="@+id/txtUserAddress"
+        <TextView
+            android:id="@+id/txtPetNameAdopt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textColor="@color/white"
-        android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        />
-    <TextView
-        android:id="@+id/txtUserPhone"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="User Id"
+            />
+        <TextView
+            android:id="@+id/txtUserId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="User Name"
+            />
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
 
-        android:layout_weight="1"/>
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="User Email"
+            />
+        <TextView
+            android:id="@+id/txtUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="User Address"
+            />
+        <TextView
+            android:id="@+id/txtUserAddress"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:textSize="18sp"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:text="User Number"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/txtUserPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+
+            android:layout_weight="1"/>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical">
         <Button
             android:layout_width="140dp"
